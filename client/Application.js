@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import { Home, Group, Project, Follows, AddProject, Login } from './containers/index';
+import { Group, Project, Follows, AddProject, Login } from './containers/index';
 import { Alert } from 'antd';
 import User from './containers/User/User.js';
 import Open from './containers/Open/index.js';
 import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
 import Loading from './components/Loading/Loading';
 import MyPopConfirm from './components/MyPopConfirm/MyPopConfirm';
 import { checkLoginState } from './reducer/modules/user';
@@ -39,7 +38,7 @@ const openPage = window.location.pathname.match(/^\/open$/)
 let AppRoute = {
   home: {
     path: '/',
-    component: Home
+    component: Login
   },
   group: {
     path: '/group',
@@ -139,7 +138,6 @@ export default class App extends Component {
                 })}
               </div>
             </div>
-            {!openPage && <Footer />}
           </div>
         </Router>
       );

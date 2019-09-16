@@ -306,7 +306,8 @@ class userController extends baseController {
     params = yapi.commons.handleParams(params, {
       username: 'string',
       password: 'string',
-      email: 'string'
+      email: 'string',
+      vcode: 'string'
     });
 
     if (!params.email) {
@@ -315,6 +316,10 @@ class userController extends baseController {
 
     if (!params.password) {
       return (ctx.body = yapi.commons.resReturn(null, 400, '密码不能为空'));
+    }
+
+    if (params.vcode !== 'Aicaigroup') {
+      return (ctx.body = yapi.commons.resReturn(null, 400, '邀请码不正确，请联系管理员'));
     }
 
     let checkRepeat = await userInst.checkRepeat(params.email); //然后检查是否已经存在该用户

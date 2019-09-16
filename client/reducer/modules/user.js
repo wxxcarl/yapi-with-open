@@ -153,11 +153,12 @@ export function loginLdapActions(data) {
 }
 
 export function regActions(data) {
-  const { email, password, userName } = data;
+  const { email, password, userName, vCode } = data;
   const param = {
     email,
     password,
-    username: userName
+    username: userName,
+    vcode: vCode
   };
   return {
     type: REGISTER,

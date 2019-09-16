@@ -436,7 +436,7 @@ class View extends Component {
               接口路径：
             </Col>
             <Col
-              span={8}
+              span={20}
               className="colValue"
               onMouseEnter={this.enterItem}
               onMouseLeave={this.leaveItem}
@@ -460,10 +460,12 @@ class View extends Component {
                 />
               </Tooltip>
             </Col>
+          </Row>
+          <Row className="row">
             <Col span={4} className="colKey">
               Mock地址：
             </Col>
-            <Col span={8} className="colValue">
+            <Col span={20} className="colValue">
               {this.flagMsg(this.props.currProject.is_mock_open, this.props.currProject.strice)}
               <span
                 className="href"

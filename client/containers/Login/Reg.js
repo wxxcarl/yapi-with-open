@@ -150,6 +150,24 @@ class Reg extends Component {
           )}
         </FormItem>
 
+        {/* 邀请码 */}
+        <FormItem style={formItemStyle}>
+          {getFieldDecorator('vCode', {
+            rules: [
+              {
+                required: true,
+                message: '请输入邀请码!'
+              }
+            ]
+          })(
+            <Input
+              style={changeHeight}
+              prefix={<Icon type="swap" style={{ fontSize: 13 }} />}
+              placeholder="内部邀请码"
+            />
+          )}
+        </FormItem>
+
         {/* 注册按钮 */}
         <FormItem style={formItemStyle}>
           <Button
