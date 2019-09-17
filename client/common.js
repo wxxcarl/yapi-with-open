@@ -78,7 +78,7 @@ exports.checkAuth = (action, role) => {
 };
 
 exports.formatTime = timestamp => {
-  return dayjs(timestamp).format('YYYY-MM-DD HH:mm:ss');
+  return dayjs.unix(timestamp).format('YYYY-MM-DD HH:mm:ss');
 };
 
 // 防抖函数，减少高频触发的函数执行的频率
